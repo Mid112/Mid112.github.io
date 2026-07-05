@@ -1,6 +1,6 @@
-# Mridul Nohria — Portfolio
+# Astro Portfolio Website
 
-A bold, playful personal website for an early-career software developer. Built with **Astro**, vanilla JavaScript, and CSS. Designed for GitHub Pages.
+A bold, responsive personal portfolio built with **Astro**, vanilla JavaScript, and CSS. It is designed for students, developers, and early-career professionals who want a fast static website that can be deployed to GitHub Pages.
 
 ## Quick start
 
@@ -11,15 +11,39 @@ npm run dev
 
 Local site: `http://localhost:4321`
 
-## Deploy to GitHub Pages
+## Customize the portfolio
 
-For the clean URL `https://mid112.github.io`, create or rename the repository to:
+Most portfolio content lives in:
 
 ```text
-Mid112.github.io
+src/data/profile.js
 ```
 
-Then:
+Update the name, role, summary, projects, achievements, skills, email, and social links there.
+
+Replace the public assets with your own files:
+
+- Profile image in `public/assets/`
+- Resume PDF in `public/resume/`
+- Favicon at `public/favicon.svg`
+
+If you rename those files, also update the matching paths in `src/data/profile.js`.
+
+## Deploy to GitHub Pages
+
+For a GitHub user site URL like:
+
+```text
+https://your-username.github.io
+```
+
+name the repository:
+
+```text
+your-username.github.io
+```
+
+Then deploy:
 
 1. Push this project to the repository.
 2. Go to **Settings → Pages**.
@@ -27,6 +51,8 @@ Then:
 4. Push to `main` or `master`.
 
 The workflow in `.github/workflows/deploy.yml` will build and deploy the site.
+
+For a project site instead of a user site, update the Astro `site` and `base` settings in `astro.config.mjs` to match your repository URL.
 
 ## Contact form email setup
 
@@ -44,19 +70,11 @@ PUBLIC_WEB3FORMS_ACCESS_KEY = your_access_key_here
 
 Without this key, the form will show a warning and the direct email link will still work.
 
-## Editing content
+## Project structure
 
-Most text lives in:
-
-```text
-src/data/profile.js
-```
-
-Update projects, links, achievements, skills, email, phone, and social links there.
-
-## Files included
-
-- Profile image: `public/assets/mridul-nohria.png`
-- Resume PDF: `public/resume/Mridul_Nohria_Resume.pdf`
-- Main page: `src/pages/index.astro`
-- Deployment workflow: `.github/workflows/deploy.yml`
+- `src/data/profile.js` - portfolio content and links
+- `src/pages/index.astro` - main page markup, styles, and form behavior
+- `src/layouts/BaseLayout.astro` - base HTML document metadata
+- `public/assets/` - public images
+- `public/resume/` - public resume files
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
