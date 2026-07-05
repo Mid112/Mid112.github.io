@@ -3,7 +3,6 @@ export const profile = {
   role: 'Software Developer & Computer Science Student',
   location: 'Vancouver, BC, Canada',
   email: 'mridulnohria2004@gmail.com',
-  phone: '+1 (672)-288-3375',
   github: 'https://github.com/Mid112',
   linkedin: 'https://www.linkedin.com/in/mridul-nohria/',
   resume: '/resume/Mridul_Nohria_Resume.pdf',
